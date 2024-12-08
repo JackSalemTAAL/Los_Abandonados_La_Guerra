@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Los Abandonados III La Gran Guerra</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: red;
+      text-shadow: 0 0 10px red, 0 0 20px red;
+      margin-bottom: 20px;
+    }
+
+    #countdown {
+      font-size: 2rem;
+      color: white;
+      text-shadow: 0 0 10px white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Los Abandonados III La Gran Guerra</h1>
+  <div id="countdown">Cargando...</div>
+
+  <script>
+    // Configurar fecha del evento
+    const targetDate = new Date("2025-03-24T00:00:00"); // Cambia esta fecha según lo necesites
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerText = "¡El evento ha comenzado!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 10
